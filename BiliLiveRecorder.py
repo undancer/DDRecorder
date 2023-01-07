@@ -25,9 +25,10 @@ class BiliLiveRecorder(BiliLive):
             default_headers = {
                 'Accept-Encoding': 'identity',
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36 ',
-                'Referer': re.findall(
-                    r'(https://.*\/).*\.flv',
-                    record_url)[0]
+                'Referer': 'https://live.bilibili.com/'
+                # 'Referer': re.findall(
+                #     r'(https://.*\/).*\.flv',
+                #     record_url)[0]
             }
             headers = {**default_headers, **
                        self.config.get('root', {}).get('request_header', {})}
